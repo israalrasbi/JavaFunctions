@@ -43,6 +43,8 @@ Example Output: 's'
 **Task6: Find the First Repeated Character**
 
 Write a method firstRepeatedChar(String str) that returns the first character that is repeated in the string. If no character is repeated, return null.
+
 Example Input: "swiss"
+
 Example Output: 's'
 
