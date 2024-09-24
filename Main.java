@@ -3,28 +3,45 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //take input from user
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter string: ");
-        String str = sc.nextLine();
-        System.out.println("The copied characters: "+extraFront(str));
+    public static void main(String[] args) {//TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the first string: ");
+        String str1 = sc.nextLine();
+        System.out.print("Enter the second string: ");
+        String str2 = sc.nextLine();
+        System.out.print("The concatenated string is: " + minCat(str1, str2));
     }
 
-    public static String extraFront(String str) {
-        //check the length of the word
-        int wordLen = str.length();
-        //define a variable that will store copied char
-        String copiedChar = " ";
-        //if less than 2 then make 3 copies of that 1 char
-        if (wordLen < 2) {
-            copiedChar = str+str+str; //concatenate
-            return copiedChar;
+    public static String minCat(String str1, String str2) {
+        //check the length of the words
+        int wordOneLength = str1.length();
+        int wordTwoLength = str2.length();
+
+        //define a variable to store the concatenated word
+        String concatword = "";
+        //if they have the same length, then concat directly
+        if (wordOneLength == wordTwoLength) {
+            concatword = str1 + str2;
+            return concatword;
         }
-        //else, subtract the first 2 char from the word and make copies
-        String first2Char = str.substring(0, 2);
-        copiedChar = first2Char+first2Char+first2Char; //concatenate
-        return copiedChar;
+        //else, check which word is longer, then remove the extra char
+        //if str1 is bigger than str2, then change str1
+        if (wordOneLength > wordTwoLength) {
+            //get the difference between the two words
+            int diff = wordOneLength - wordTwoLength;
+            //define the new str1 after removing the extra char
+            String newStr1 = str1.substring(diff,wordOneLength);
+            //concat
+            concatword = newStr1 + str2;
+            return concatword;
+        }
+        //else, if str2 is bigger than str1, the change str2
+        else{
+            int diff = wordTwoLength - wordOneLength;
+            String newStr2 = str2.substring(diff,wordTwoLength);
+            concatword = str1 + newStr2;
+            return concatword;
+        }
     }
 }
