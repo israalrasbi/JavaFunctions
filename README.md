@@ -48,3 +48,33 @@ Example Input: "swiss"
 
 Example Output: 's'
 
+**Task7: String Concatenation**
+
+Given two strings, append them together (known as "concatenation") and return the result. However, if the strings are different lengths, omit chars from the longer string so it is the same length as the shorter string. So "Hello" and "Hi" yield "loHi". The strings may be any length.
+
+minCat("Hello", "Hi") → "loHi"`
+
+minCat("Hello", "java") → "ellojava" `
+
+minCat("java", "Hello") → "javaello"
+
+**Task8: 3 copies of first 2 characters**
+
+Given a string, return a new string made of 3 copies of the first 2 chars of the original string. The string may be any length. If there are fewer than 2 chars, use whatever is there.
+
+extraFront("Hello") → "HeHeHe"`
+
+extraFront("ab") → "ababab" `
+
+extraFront("H") → "HHH"
+
+**Task9: Substring begin and end**
+Given a string, if a length 2 substring appears at both its beginning and end, return a string without the substring at the beginning, so "HelloHe" yields "lloHe".
+The substring may overlap with itself, so "Hi" yields "". Otherwise, return the original string unchanged.
+
+without2("HelloHe") → "lloHe"`
+
+without2("HelloHi") → "HelloHi" `
+
+without2("Hi") → ""
+
